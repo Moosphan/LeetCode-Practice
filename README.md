@@ -18,7 +18,7 @@ Practice [**LeetCode**](https://leetcode.com) at regular intervals.
 所以返回 [0, 1]
 ```
 
-#### 方法一：常见的暴力解法
+##### 方法一：常见的暴力解法
 
 即遍历每个元素 `m`，并查找是否存在一个值与 `target - m` 相等的目标元素。
 
@@ -40,7 +40,7 @@ public int[] twoSum(int[] nums, int target) {
 - 时间复杂度：O(n^2)
 - 空间复杂度：O(1)
 
-#### 方法二：高效解法
+##### 方法二：高效解法
 
 如果你对 HashMap 比较了解，应该可以猜到我们比较高效的实现方式了，没错，就是通过 HashMap 本身的特性，可以将我们的遍历操作缩减为一层。如果你对 HashMap 不是很了解，可以参考：[HashMap 的实现原理](https://github.com/Moosphan/Android-Daily-Interview/issues/16)。
 
@@ -68,6 +68,11 @@ class Solution {
 ```
 
 原理就是在进行迭代并将元素插入到表中的同时，我们还会回过头来检查表中是否已经存在当前元素所对应的目标元素。如果它存在，那我们已经找到了对应解，并立即将其返回；不存在则继续插入操作。
+
+这种解法下，我们的时间和空间复杂度为：
+
+- 时间复杂度：O(n)
+- 空间复杂度：O(n)
 
 
 
