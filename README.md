@@ -1,9 +1,12 @@
 # LeetCode-Practice
+
 Practice [**LeetCode**](https://leetcode.com) at regular intervals.
 
 [**LeetCode**](https://leetcode.com) 上习题的定期练习和解析。
 
 > 除非特别说明，否则解题的方式皆通过 **`Java`** 代码实现。
+
+![author](<https://img.shields.io/badge/%E4%BD%9C%E8%80%85-AFeng-blue.svg>)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/moosphan/LeetCode-Practice.svg)![code_type](https://img.shields.io/github/languages/top/moosphan/LeetCode-Practice.svg)![license](https://img.shields.io/badge/license-Apache%202-orange.svg)![blog](https://img.shields.io/badge/Blog-%E7%BB%B4%E6%8A%A4%E4%B8%AD-yellow.svg)
 
 ### 题一：[ Two Sum](https://leetcode-cn.com/problems/two-sum)
 
@@ -18,7 +21,7 @@ Practice [**LeetCode**](https://leetcode.com) at regular intervals.
 所以返回 [0, 1]
 ```
 
-##### 方法一：常见的暴力解法
+#### 方法一：常见的暴力解法
 
 即遍历每个元素 `m`，并查找是否存在一个值与 `target - m` 相等的目标元素。
 
@@ -40,7 +43,7 @@ public int[] twoSum(int[] nums, int target) {
 - 时间复杂度：O(n^2)
 - 空间复杂度：O(1)
 
-##### 方法二：高效解法
+#### 方法二：高效解法
 
 如果你对 HashMap 比较了解，应该可以猜到我们比较高效的实现方式了，没错，就是通过 HashMap 本身的特性，可以将我们的遍历操作缩减为一层。如果你对 HashMap 不是很了解，可以参考：[HashMap 的实现原理](https://github.com/Moosphan/Android-Daily-Interview/issues/16)。
 
