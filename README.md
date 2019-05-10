@@ -8,7 +8,7 @@ Practice [**LeetCode**](https://leetcode.com) at regular intervals.
 
 ![author](<https://img.shields.io/badge/%E4%BD%9C%E8%80%85-AFeng-blue.svg>)    ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/moosphan/LeetCode-Practice.svg)    ![code_type](https://img.shields.io/github/languages/top/moosphan/LeetCode-Practice.svg)    ![license](https://img.shields.io/badge/license-Apache%202-orange.svg)    ![blog](https://img.shields.io/badge/Blog-%E7%BB%B4%E6%8A%A4%E4%B8%AD-yellow.svg)
 
-### 题一：[ Two Sum](https://leetcode-cn.com/problems/two-sum)
+### Q1：[ Two Sum](https://leetcode-cn.com/problems/two-sum)
 
 给定一个整数数组 `nums` 和一个目标值 `target`，请你在该数组中找出和为目标值的那 **两个** 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
 
@@ -76,6 +76,22 @@ class Solution {
 
 - 时间复杂度：O(n)
 - 空间复杂度：O(n)
+
+-------------
+
+### Q2：[两数相加](https://leetcode-cn.com/problems/two-sum)
+
+给出两个 **非空** 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 **逆序** 的方式存储的，并且它们的每个节点只能存储 **一位** 数字。如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
+
+**示例：**
+
+```
+输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+输出：7 -> 0 -> 8
+原因：342 + 465 = 807
+```
+
+
 
 
 
