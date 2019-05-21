@@ -15,7 +15,10 @@ public class Main {
         list.addNode(1);
         list.addNode(2);
         list.addNode(3);
-        System.out.print(list.toString());
+        list.addNode(4, 8);
+        //list.removeNode(4);
+        System.out.println(list.toString());
+        System.out.println(list.get(4).data);
 
     }
 

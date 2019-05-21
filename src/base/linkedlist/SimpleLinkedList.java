@@ -76,11 +76,11 @@ public class SimpleLinkedList {
     public void addNode(int index, int data) {
         Node node = new Node(data);
         // 如果链表不为空，至少需要有一个结点
-        if (index < 0 || index > length()) {
+        if (index < 1 || index > length() + 1) {
             throw new IllegalArgumentException("the node position inserted is invalid, please check it up again.");
         }
-        // 从第0个位置开始(head位置为0)
-        int count = 0;
+        // 从第1个位置开始(head位置为0)
+        int count = 1;
         Node currentNode = head;
         while (currentNode.next != null) {
             if (index == count++) {
@@ -89,9 +89,14 @@ public class SimpleLinkedList {
                 node.next = currentNode.next;
                 // 再将目标node插入到当前node的后面
                 currentNode.next = node;
+                System.out.print(node.data);
                 return;
             }
             currentNode = currentNode.next;
+        }
+        // 当前插入的位置是链表的末尾
+        if (index == length()) {
+            addNode(node);
         }
     }
 
@@ -101,23 +106,44 @@ public class SimpleLinkedList {
      */
     public void removeNode(int index) {
         // 不能少于一个结点，并且不能超过总长度
-        if (index < 0 || index > length() -1 ) {
+        if (index < 1 || index > length() -1 ) {
             throw new IllegalArgumentException("the node position removed is invalid, please check it up again.");
         }
-        int count = 0;
+        int count = 1;
         Node current = head;
-        Node preNode = head;
         while (current.next != null) {
             // 找到删除位置
             if (index == count++) {
-                preNode.next = current.next;
+                current.next = current.next.next;
                 return;
             }
-            preNode = current;
             current = current.next;
         }
 
     }
+
+    /**
+     * 获取某个位置的结点
+     * @param location 目标结点的位置
+     * @return 目标结点
+     */
+    public Node get(int location) {
+        Node node = null;
+        if (location < 1 || location > length() -1 ) {
+            throw new IllegalArgumentException("the node position queried is invalid, please check it up again.");
+        }
+        int count = 1;
+        Node current = head;
+        while (current.next != null) {
+            // 找到目标位置
+            if (location == count++) {
+                node = current.next;
+            }
+            current = current.next;
+        }
+        return node;
+    }
+
 
     /**
      * 打印链表内所有数据
@@ -125,12 +151,12 @@ public class SimpleLinkedList {
      */
     public String toString() {
         Node temp = head.next;
-        String message = "";
+        StringBuilder message = new StringBuilder();
         while (temp != null) {
-            message = message + temp.data + "\t";
+            message.append(temp.data).append("\t");
             temp = temp.next;
         }
-        return message;
+        return message.toString();
     }
 
 }
