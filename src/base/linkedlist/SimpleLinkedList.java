@@ -2,9 +2,18 @@ package base.linkedlist;
 
 /**
  * 简单模拟单链表
+ * <p>
+ *     链表至少包含一个头结点 head，只是充当龙头的作用，并不用来存储数据。
+ *     每个结点都存在链接下一个结点的地址-->next引用，指向下一个结点，可以幻想成"贪吃蛇"的模型。
+ * </p>
  */
 public class SimpleLinkedList {
     public Node head;
+    private static final int HEAD_NODE_DATA = -1;
+
+    public SimpleLinkedList() {
+        head = new Node(HEAD_NODE_DATA);
+    }
 
     /**
      * 获取当前单链表的长度
@@ -56,6 +65,7 @@ public class SimpleLinkedList {
             currentNode = currentNode.next;
         }
         currentNode.next = node;
+        //System.out.print(node.data);
     }
 
     /**
@@ -114,10 +124,10 @@ public class SimpleLinkedList {
      * @return 链表数据
      */
     public String toString() {
-        Node temp = head;
-        String message = null;
-        while (temp.next != null) {
-            message = temp.data + "\t";
+        Node temp = head.next;
+        String message = "";
+        while (temp != null) {
+            message = message + temp.data + "\t";
             temp = temp.next;
         }
         return message;
